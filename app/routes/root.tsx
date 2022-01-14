@@ -12,7 +12,7 @@ const Root = () => {
       <Link to="path2">path2 link</Link>
       <button onClick={() => setState((prev) => prev + 1)}>increment</button>
       <button onClick={() => setState((prev) => prev - 1)}>decrement</button>
-      <Outlet />
+      <Outlet context={[state, setState]}/>
     </div>
   );
 };

@@ -1,5 +1,17 @@
+import { Dispatch, SetStateAction } from 'react';
+import { useOutletContext } from 'remix';
+
 const Path2 = () => {
-  return <div>path2 route component</div>;
+  const [state, setState] =
+    useOutletContext<[number, Dispatch<SetStateAction<number>>]>();
+  return (
+    <div>
+      path2 route component
+      <div>state: {state}</div>
+      <button onClick={() => setState((prev) => prev + 1)}>increment</button>
+      <button onClick={() => setState((prev) => prev - 1)}>decrement</button>
+    </div>
+  );
 };
 
 export default Path2;
