@@ -7,7 +7,9 @@ const Path1 = () => {
   return (
     <div>
       path1 route component
-      <div>state: {state}</div>
+      <div>
+        {state} * 10 = {state * 10}
+      </div>
       <button onClick={() => setState((prev) => prev + 1)}>increment</button>
       <button onClick={() => setState((prev) => prev - 1)}>decrement</button>
     </div>
